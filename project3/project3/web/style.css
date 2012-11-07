@@ -1,0 +1,105 @@
+li {
+  float: left;
+  position: relative;
+  margin-right: 35px;
+  margin-bottom: 15px;
+  margin-top: 15px;
+  list-style-type: none;
+}
+
+li img {
+  width: 200px;
+  height:200px;
+  border: 10px solid;
+}
+
+li p {
+  width: 200px;
+  height: -80px;
+  position: absolute;
+  left: 10px;
+  bottom: -10px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  
+  text-align:center;
+  text-transform: uppercase;
+  
+  
+  background-color: rgba(0,0,0, 0.7);
+}
+li p a{
+    color: bisque;
+    font-style:italic;
+}
+
+h1{
+    color:  lightslategray;
+    font-style:italic;
+}
+h1 p{
+    color:  rosybrown;
+    font-style:italic;
+    font-family: cursive;
+    font-size:20px;
+}
+
+
+
+#user form{
+    font-style:italic;
+    font-family: cursive;
+    color:  lightslategray;
+}
+#f1 h1{
+	position:relative;
+        font-family: cursive;
+	color: rosybrown;
+	font-style:italic;
+}
+
+img {
+    display:block;
+    
+}
+
+.rotate_90 {
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
+}
+
+.rotate_180 {
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
+}
+
+
+.rotate_270 {
+    -webkit-transform: rotate(270deg);
+    -moz-transform: rotate(270deg);
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
+}
+
+.border_one{
+    border-style:groove;
+    border-width:10px;
+    border-color:pink;
+    }
+ .border_two{
+    border_style:ridge;
+    border-width:10px;
+    border-color: crimson;
+    }
+  .border_three{
+     border-style:outset;
+     border-width:10px;
+     border-color: sienna;
+     }
+   .border_four{
+     border_style:inset;
+     border-width:10px;
+     border-color:  darkseagreen;
+    } 
+    
