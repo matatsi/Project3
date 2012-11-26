@@ -6,7 +6,10 @@
     </head>
 
     <body>
-        <h1>Project 3<br>
+        
+        <div id="f1">
+        <h1>This is my Photo Gallery, make your own...</h1>
+        </div>
             <p>Please enter your password and username</p></h1>
         <div id="user">
         <form action="login" method="post">
@@ -15,11 +18,14 @@
             <input type="submit">
         </form>
         </div>
-        <a href="register.html">Register</a>
-  
-        <div id="f1">
-        <h1>PHOTOS</h1>
+        <a href="register.html">Register</a><br><br>
+        <div id ="per">
+            <h2> Choose the links below in order to see:</h2>
+        <a href="statistics?display=login">Users Online</a><br> 
+        <a href="statistics?display=register">Users Registered</a> <br>
+        <a href="statistics?display=photos">Photos Uploaded</a><br>
         </div>
+        
         <ul class="gallery">
 						<li>
 				<img src="pictures/woman.jpg"  >

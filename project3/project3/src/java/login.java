@@ -7,11 +7,19 @@ import javax.servlet.annotation.WebServlet;
 import java.io.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
-
+import java.util.*;
 import java.sql.*;
 
-@WebServlet(name = "login", urlPatterns = {"/login"})
+@WebServlet(name = "login", urlPatterns = {"/login"}, loadOnStartup=0)
 public class login extends HttpServlet {
+    public static ArrayList<LoginListener> listeners;
+    
+    public static void addListener(LoginListener stats )
+    {
+        if ( listeners == null )
+            listeners = new ArrayList();
+        listeners.add(stats);
+    }
 
     /**
      * Processes requests for both HTTP
@@ -62,6 +70,11 @@ public class login extends HttpServlet {
             if (rs.next()) {
                 //edw petuxe to login
                 session.setAttribute("user", username);
+                
+                int i;
+                for (i=0; i<listeners.size(); i++)
+                    listeners.get(i).UserLogined(username);
+                
                 wall.wall(username, out, this.getServletContext().getRealPath("/"));
                 //out.println("<script>window.location.assign('photos.html')</script>");
             } else {

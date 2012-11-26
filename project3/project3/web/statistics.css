@@ -1,0 +1,58 @@
+/* 
+    Document   : statistics
+    Created on : 21 Νοε 2012, 10:51:12 μμ
+    Author     : marouli
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+.user {
+    clear:both;
+    
+}
+.user p {
+    width:100px;
+    float:left;
+    font-style: italic;
+    font-family: cursive;
+    text-decoration: underline;
+    text-color: lightslategray;
+}
+
+.small {
+    float:left;
+    height:80px;
+    width:80px;
+    border-style:groove;
+    border-width: 8px;
+    border-color: indianred;
+    
+}
+.registered{
+    font-family: cursive;
+    color: rosybrown; 
+}
+.title{
+    color: lightslategrey;
+    font-size:20px;
+}
+.tit1{
+    color: lightslategrey;
+    font-size:20px;
+}
+.tit3{
+    color: lightslategrey;
+    font-size:20px;
+    width:100px;
+}
+.tit2{
+    color: lightslategrey;
+    font-size:20px;
+}
+.me{
+    padding-top: 10px;
+}
+a{
+    
+    clear:both;
+}

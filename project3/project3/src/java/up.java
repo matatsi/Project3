@@ -46,6 +46,15 @@ import javax.xml.transform.dom.DOMSource;
  */
 @WebServlet(name = "up", urlPatterns = {"/up"})
 public class up extends HttpServlet {
+    public static ArrayList<PhotoListener> listeners;
+    
+    public static void addListener(PhotoListener stats )
+    {
+        if ( listeners == null )
+            listeners = new ArrayList();
+        listeners.add(stats);
+    }
+
 
     /**
      * Processes requests for both HTTP
@@ -110,7 +119,7 @@ public class up extends HttpServlet {
         PrintWriter out = response.getWriter();
         String caption = request.getParameter("caption");
         HttpSession session = request.getSession();
-        String finalimage = "makhs";
+        String finalimage = "";
 
         System.out.println(request);
         String username = (String) session.getAttribute("user");
@@ -196,6 +205,9 @@ public class up extends HttpServlet {
                         Statement stmt = con.createStatement();
 
                         stmt.execute("insert into pictures VALUES('" + username + "','" + finalimage + "')");
+                        int i;
+                        for (i=0; i<listeners.size(); i++)
+                            listeners.get(i).UserUploadedPhoto(username, finalimage);
                         con.close();
                     } catch (Exception e) {
                         e.printStackTrace();

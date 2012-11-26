@@ -102,4 +102,11 @@ img {
      border-width:10px;
      border-color:  darkseagreen;
     } 
-    
+    #per a{
+        color: lightslategray;
+    }
+    #per h2{
+        font-style:italic;
+        font-family: cursive;
+        color:rosybrown;
+    }

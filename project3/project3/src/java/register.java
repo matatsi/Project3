@@ -5,13 +5,22 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 
 import java.sql.*;
+import java.util.ArrayList;
 
 /**
  *
  * @author matatsi
  */
-@WebServlet(name = "register", urlPatterns = {"/register"})
+@WebServlet(name = "register", urlPatterns = {"/register"}, loadOnStartup=1)
 public class register extends HttpServlet {
+public static ArrayList<RegisterListener> listeners;
+    
+    public static void addListener(RegisterListener stats )
+    {
+        if ( listeners == null )
+            listeners = new ArrayList();
+        listeners.add(stats);
+    }
 
 
     /**
@@ -77,6 +86,10 @@ public class register extends HttpServlet {
             if (!stmt.execute("INSERT INTO users VALUES('" + username + "', '" + password + "')")) {
                 out.println("<h1>You are now registered " + username + "</h1>");
                 out.println("<a href=\"index.jsp\">Login</a>");
+                
+                int i;
+                for (i=0; i<listeners.size(); i++)
+                    listeners.get(i).UserRegistered(username);
             } else {
                 out.println("<h1>Could not add your username to the db</h1>");
                 out.println("<a href=\"register.html\">Register</a>");
